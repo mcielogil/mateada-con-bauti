@@ -471,7 +471,7 @@ footer small{display:block;margin-top:2px;font-size:13px;letter-spacing:.24em;te
           </span></button>
           <div class="dcard" data-i="2" role="button" tabindex="0" aria-label="Detalle: dónde"><span class="dcard-in">
             <span class="face front"><b>?</b><span>Dónde</span></span>
-            <span class="face back"><span class="k">Dónde</span><span class="v" data-c="lugarNombre"></span><span class="s" data-c="lugarDireccion"></span><a id="mapLink" href="#" target="_blank" rel="noopener">Ver mapa</a></span>
+            <span class="face back"><span class="k">Dónde</span><span class="v" data-c="lugarNombre"></span></span>
           </span></div>
           <button class="dcard" data-i="3" aria-label="Detalle: qué traer"><span class="dcard-in">
             <span class="face front"><b>?</b><span>¿Qué traer?</span></span>
@@ -537,10 +537,6 @@ footer small{display:block;margin-top:2px;font-size:13px;letter-spacing:.24em;te
         </button>
         <div class="fx" id="fx2"></div>
       </div>
-      <div class="after" id="after" hidden>
-        <a class="btn primary" id="waBtn" href="#" target="_blank" rel="noopener">Avisarle por WhatsApp</a>
-        <a class="btn ghost" id="calBtn" href="#" target="_blank" rel="noopener">Agendar en mi calendario</a>
-      </div>
     </section>
 
     <footer>
@@ -557,13 +553,13 @@ footer small{display:block;margin-top:2px;font-size:13px;letter-spacing:.24em;te
    ========================================================= */
 const CONFIG = {
   bebe: "Bautista",
-  inicio: "2026-12-12T16:00:00-03:00",   // fecha y hora de inicio (hora de Argentina)
+  inicio: "2026-12-05T18:00:00-03:00",   // fecha y hora de inicio (hora de Argentina)
   duracionHoras: 4,
-  fechaTexto: "Sábado 12 de diciembre",
+  fechaTexto: "Sábado 5 de diciembre",
   anio: "2026",
-  horaTexto: "16:00 a 20:00 h",
+  horaTexto: "18:00 h",
   horaNota: "a la hora de la merienda",
-  lugarNombre: "Salón de ejemplo",
+  lugarNombre: "Quincho de la Abu Andre",
   lugarDireccion: "Calle de ejemplo 123",
   mapa: "https://maps.google.com/?q=Mendoza,Argentina",
   regaloTexto: "Tu presencia es nuestro mejor regalo",
@@ -574,7 +570,6 @@ const CONFIG = {
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 $$("[data-c]").forEach(el => el.textContent = CONFIG[el.dataset.c] ?? "");
-$("#mapLink").href = CONFIG.mapa;
 const heartSVG = '<svg viewBox="0 0 24 22"><use href="#heart" fill="currentColor"/></svg>';
 const leafSVG = '<svg viewBox="0 0 20 10"><use href="#leaf" fill="currentColor"/></svg>';
 
@@ -755,16 +750,8 @@ function confirmNow(){
       setTimeout(() => h.remove(), 2800);
     }
   }, 700);
-  setTimeout(() => { $("#after").hidden = false; }, 1300);
 }
-$("#waBtn").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(`¡Hola! Confirmo que voy al baby shower de ${CONFIG.bebe} 🧸`)}`;
 
-const fmt = d => d.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"");
-const end = new Date(start.getTime() + CONFIG.duracionHoras*36e5);
-$("#calBtn").href = "https://calendar.google.com/calendar/render?action=TEMPLATE"
-  + "&text=" + encodeURIComponent("Baby shower de " + CONFIG.bebe)
-  + "&dates=" + fmt(start) + "/" + fmt(end)
-  + "&location=" + encodeURIComponent(CONFIG.lugarNombre + ", " + CONFIG.lugarDireccion);
 </script>
 
 </body>
