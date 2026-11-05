@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Baby Shower de Bautista</title>
-<meta property="og:title" content="Baby shower de Bautista">
+<title>Mateada con Bauti</title>
+<meta property="og:title" content="Mateada con Bauti">
 <meta property="og:description" content="Llegó una carta de un osito muy esperado. Tocá el sello para abrirla.">
 <style>[hidden]{display:none!important}</style>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -97,6 +97,7 @@ section,header,footer{text-align:center}
 .eyebrow{margin:14px 0 0;font-size:14px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
 .lead{margin:2px 0 0;font-style:italic;font-size:22px;color:var(--cocoa)}
 .name{margin:0;font-family:var(--f-script);font-weight:400;font-size:clamp(70px,22vw,96px);line-height:1.05;color:var(--cocoa);text-wrap:balance}
+.girls{display:inline-block;margin:12px 0 0;font-style:italic;font-size:19px;color:var(--cocoa);background:var(--sage-soft);border-radius:99px;padding:3px 16px 2px}
 .sub{margin:4px auto 0;max-width:28ch;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
 h2{margin:6px 0 4px;font-family:var(--f-script);font-weight:400;font-size:40px;line-height:1.1;color:var(--cocoa);text-wrap:balance}
 .step{display:inline-block;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage-dark);border:1px solid var(--sage);border-radius:99px;padding:3px 12px 2px;background:var(--paper)}
@@ -287,7 +288,7 @@ footer small{display:block;margin-top:2px;font-size:13px;letter-spacing:.24em;te
     <p class="intro-top">Llegó una carta de un osito <b>muy esperado</b></p>
     <div class="env" id="env">
       <div class="env-back"></div>
-      <div class="letter"><small>Baby shower</small><span data-c="bebe">Bautista</span></div>
+      <div class="letter"><small>Mateada con</small><span data-c="bebe">Bautista</span></div>
       <div class="env-front"></div>
       <div class="flap"></div>
       <button class="seal" id="seal" aria-label="Abrir el sobre">
@@ -318,7 +319,8 @@ footer small{display:block;margin-top:2px;font-size:13px;letter-spacing:.24em;te
       <p class="eyebrow">Un osito muy esperado</p>
       <p class="lead">ya casi llega</p>
       <h1 class="name" data-c="bebe">Bautista</h1>
-      <p class="sub">Te invitamos a celebrar su baby shower</p>
+      <p class="sub">Te invitamos a una mateada con Bauti</p>
+      <p class="girls">Solo para chicas</p>
     </header>
 
     <!-- PASO 1: chupete -->
@@ -475,7 +477,7 @@ footer small{display:block;margin-top:2px;font-size:13px;letter-spacing:.24em;te
           </span></div>
           <button class="dcard" data-i="3" aria-label="Detalle: qué traer"><span class="dcard-in">
             <span class="face front"><b>?</b><span>¿Qué traer?</span></span>
-            <span class="face back"><span class="k">¿Qué traer?</span><span class="v" data-c="regaloTexto"></span></span>
+            <span class="face back"><span class="k">¿Qué traer?</span><span class="v" data-c="traerTexto"></span><span class="s" data-c="regaloTexto"></span></span>
           </span></button>
         </div>
       </div>
@@ -562,6 +564,7 @@ const CONFIG = {
   lugarNombre: "Quincho de la Abu Andre",
   lugarDireccion: "Calle de ejemplo 123",
   mapa: "https://maps.google.com/?q=Mendoza,Argentina",
+  traerTexto: "Tu mate y tu malla",
   regaloTexto: "Tu presencia es nuestro mejor regalo",
   confirmarAntes: "1 de diciembre",
   whatsapp: "5492610000000"               // número con código de país, sin + ni espacios
